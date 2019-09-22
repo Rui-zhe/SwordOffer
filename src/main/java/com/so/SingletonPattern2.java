@@ -86,7 +86,7 @@ class Singleton3 {
  */
 class Singleton4 {
     private static class SingletonHolder {
-        private static Singleton4 ourInstance = new Singleton4();
+        private static final Singleton4 ourInstance = new Singleton4();
     }
     public static Singleton4 getInstance() {
         return SingletonHolder.ourInstance;
