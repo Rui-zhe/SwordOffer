@@ -28,7 +28,9 @@ public class BinaryTreeSearch6 {
         if (pre.length != in.length) {
             return null;
         }
-
+        
+        boolean notFind = true;
+        
         TreeNode root = new TreeNode(pre[0]);
         for (int i = 0; i < pre.length; i++) {
             if (pre[0] == in[i]) {
@@ -36,6 +38,11 @@ public class BinaryTreeSearch6 {
                 root.right = reConstructBinaryTree(Arrays.copyOfRange(pre, i + 1, pre.length), Arrays.copyOfRange(in, i + 1, in.length));
             }
         }
+        
+        if (notFind) {
+            throw new IllegalArgumentException();
+        }
+        
         return root;
     }
 
